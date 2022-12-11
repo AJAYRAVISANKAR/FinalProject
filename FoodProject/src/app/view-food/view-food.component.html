@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="container">
+        <div class="row col-md-6 col-md-offset-2 custyle">
+        <table class="table table-striped custab">
+        <thead>
+            <tr>
+                <th>foodId</th>
+                <th>foodName</th>
+                <th>categoryId</th>
+                <th>price</th>     
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let food of foodList">
+                <td>{{food.foodId}}</td>
+                <td>{{food.foodName}}</td>
+                <td>{{food.categoryId}}</td>
+                <td>{{food.price}}</td>
+              <td><button type="button" class="btn btn-info"(click)="updateFood(food.foodId)">Update Food</button></td> 
+               <td> <button type="button" class="btn btn-danger"(click)="deleteFood(food.foodId)">Delete</button> </td>
+              </tr>
+        </tbody>
+        </table>
+        </div>
+    </div>
+

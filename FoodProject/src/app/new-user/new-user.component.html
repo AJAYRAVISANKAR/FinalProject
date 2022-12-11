@@ -1,0 +1,136 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> 
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <fieldset>
+                    <legend class="text-center">Log In / Register <span class="req"><small>
+                                required *</small></span></legend>
+                                <div class="form-group">
+                                    <label for="emailID"><span class="req">* </span> emailID <small>This will be your login user
+                                            emailID</small> </label>
+                                    <input required type="email" [(ngModel)]="user.emailID" name="emailID" id="emailID"
+                                        class="form-control phone"  placeholder="Enter your emailID to Login..." />
+                                </div>
+
+                    <div class="form-group">
+                        <label for="Name"><span class="req">* </span> firstName: <small>This will be your login user
+                                name</small> </label>
+                        <input required type="text" [(ngModel)]="user.firstName" name="name" id="name"
+                            class="form-control phone" maxlength="28" placeholder="Enter your firstname..." />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastname"><span class="req">* </span> lastName: </label>
+                        <input class="form-control" type="text" [(ngModel)]="user.lastName" name="lastname" id="lastname" required
+                            placeholder="Enter lastName..." />
+                        <div id="errFirst"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password"><span class="req">* </span> password : </label>
+                        <input class="form-control" type="password" [(ngModel)]="user.password" name="password" id="password"
+                            placeholder="Enter your password" required />
+                        <div id="errLast"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="district"><span class="req">* </span> district : </label>
+                        <input class="form-control" type="text" [(ngModel)]="user.district" name="district" id="district"
+                            placeholder="Enter your district" required />
+                        <div id="errLast"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state"><span class="req">* </span> state : </label>
+                        <input class="form-control" type="text" [(ngModel)]="user.state" name="state" id="state"
+                            placeholder="Enter your state" required />
+                        <div id="errLast"></div>
+                    </div>
+
+                   <div class="form-group">
+                        <label for="zipCode"><span class="req">* </span> zipCode : </label>
+                        <input class="form-control" type="text" [(ngModel)]="user.zipCode" name="zipCode" id="zipCode"
+                            placeholder="Enter your zipCode" required />
+                        <div id="errLast"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile_No"><span class="req">* </span> mobile_No : </label>
+                        <input class="form-control" type="text" [(ngModel)]="user.mobile_No" name="mobile_No" id="mobile_No"
+                            placeholder="Enter your mobile_No" required />
+                        <div id="errLast"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role"><span class="req">* </span> role : </label>
+                        <input class="form-control" type="text" [(ngModel)]="user.role" name="role" id="role"
+                            placeholder="Enter your role" required />
+                        <div id="errLast"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="street"><span class="req">* </span> street : </label>
+                        <input class="form-control" type="text" [(ngModel)]="user.street" name="street" id="street"
+                            placeholder="Enter your street" required />
+                        <div id="errLast"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="registerUser()">
+                    </div>
+                </fieldset>
+            </form>
+            
+        </div>
+
+    </div>
+</div> 
+<div class="container">
+    <div class="container">
+        <div class="row col-md-6 col-md-offset-2 custyle">
+        <table class="table table-striped custab">
+        <thead>
+            <tr>
+                <th>emailID</th>
+                <th>firstName</th>
+                <th>lastName</th>
+                <th>password</th>
+                <th>district</th>
+                <th>state</th>
+                <th>zipCode</th>
+                <th>mobile_No</th>
+                <th>role</th>
+                <th>street</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of userList">
+                <td>{{user.emailID}}</td>
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.password}}</td>
+                <td>{{user.district}}</td>
+                <td>{{user.state}}</td>
+                <td>{{user.zipCode}}</td>
+                <td>{{user.mobile_No}}</td>
+                <td>{{user.role}}</td>
+                <td>{{user.street}}</td>
+                
+               <!--<td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteUser(user.userId)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td> -->
+              </tr>
+        </tbody>
+        </table>
+        </div>
+    </div>
+    
+    
+
+
+
+

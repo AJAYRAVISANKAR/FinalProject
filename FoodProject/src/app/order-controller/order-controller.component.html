@@ -1,0 +1,158 @@
+<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> 
+
+<nav class="navbar navbar-expand-sm navbar-da" style="background-color:black">
+    <div class="container-fluid">
+        <button onclick="history.back()"class="btn btn-primary navbar-btn"style="width:80;height: 35;">Go Back</button>   
+  
+  <ul class = "nav navbar-nav">
+    <button id="home"(click)="home()"><i   class="fa fa-home" ></i>Home</button>
+     <button id="home"(click)="contactUs()"> <i class="fa fa-phone"></i>Contact</button>
+  
+     <button id="home"(click)="customerProfile()"> <i  class="bi bi-person"></i>Profile</button>
+  
+  </ul>
+  <button (click)="logOut()"class="btn btn-danger navbar-btn">Log out</button>
+</div>
+</nav>
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <fieldset>
+                    <legend class="text-center">Order You're Food <span class="req"><small>
+                                required *</small></span></legend>
+                                <div class="form-group">
+                                    <label for="orderId"><span class="req">* </span> orderId <small>This will be your orderId
+                                            </small> </label>
+                                    <input required type="number" [(ngModel)]="order.orderId" name="orderId" id="orderId"
+                                        class="form-control phone"  placeholder="Auto Generated orderId..." />
+                                </div>
+
+                    <div class="form-group">
+                        <label for="cartId"><span class="req">* </span> cartId: <small>This will be your cartId
+                                </small> </label>
+                        <input required type="number" [(ngModel)]="order.cartId" name="cartId" id="cartId"
+                            class="form-control phone" maxlength="28" placeholder="Enter your cartId..." />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="price"><span class="req">* </span> totalPrice: </label>
+                        <input class="form-control" type="number" [(ngModel)]="order.totalPrice" name="totalPrice" id="totalPrice" required
+                            placeholder="This will be you're Total price..." />
+                        <div id="errFirst"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="Add" (click)="addOrder()">
+                    </div>
+                </fieldset>
+            </form>
+            
+        </div>
+
+    </div>
+</div> 
+
+<div class="col-md-6 mb-4">
+    <div class="form-outline ">
+        <label for="zip"class="	fa fa-inr">Total Price</label>
+    <input type="text" name="totalPrice"class="form-control" placeholder="total price "[(ngModel)]="payement.totalPrice"readonly />
+    
+    </div>
+  </div>
+  <label for="fname">Accepted Cards</label>
+  <div class="icon-container">
+    <i class="fa fa-cc-visa" style="color:navy;"></i>
+    <i class="fa fa-cc-amex" style="color:blue;"></i>
+    <i class="fa fa-cc-mastercard" style="color:red;"></i>
+    <i class="fa fa-cc-discover" style="color:orange;"></i>
+  </div>
+
+  <div class="col-md-6 mb-4">
+    <div class="form-outline ">
+        <label clsss="fa fa-credit-card">Name on Card</label>
+    <input type="text" name="nameOnCard"class="form-control" placeholder="name on card "[(ngModel)]="payement.nameOnCard"
+    required  pattern="[a-zA-Z'-'\s]*"#nameoncard="ngModel" 
+      [class.is-invalid]="nameoncard.invalid&&nameoncard.touched"/>-->
+      <!-- <small class="text-danger" [class.d-none]="state.valid||state.untouched">Required field</small> -->
+      <!--<div *ngIf="nameoncard.errors && (nameoncard.invalid && nameoncard.touched)">
+        <small class="text-danger" *ngIf="nameoncard.errors?.['required']">required field</small>
+        <small class="text-danger"*ngIf="nameoncard.errors?.['pattern']">enter a valid name</small>
+      </div> 
+   
+    </div>
+  </div>
+  <div class="col-md-6 mb-4">
+    <div class="form-outline ">
+        <label class="fa fa-credit-card">Card Number</label>
+    <input type="text" name="cardNumber"class="form-control" placeholder="1111-2222-3333-4444"[(ngModel)]="payement.cardNumber"pattern="[0-9]{16}"
+    required #cardnumber="ngModel"
+        [class.is-invalid]="cardnumber.invalid&&cardnumber.touched"/>
+        <div *ngIf="cardnumber.errors &&(cardnumber.invalid && cardnumber.touched)">
+            <small class="text-danger" *ngIf="cardnumber.errors?.['required']">required field</small>
+            <small class="text-danger"*ngIf="cardnumber.errors?.['pattern']">please enter a 16 digit number</small>
+          </div>
+   
+    </div>
+  </div>
+ 
+  <div class="col-md-6 mb-4">
+    <div class="form-outline ">
+        <label 	class="fa fa-calendar">Exp Date</label>
+    <input type="month" name="expYear"class="form-control" placeholder="expire year"[(ngModel)]="payement.expYear" 
+    required #expdate="ngModel"
+        [class.is-invalid]="expdate.invalid&&expdate.touched"/>
+        <small class="text-danger" [class.d-none]="expdate.valid||expdate.untouched">Required field</small>
+   
+    </div>
+  </div>
+  <div class="col-md-6 mb-4">
+    <div class="form-outline ">
+        <label class="fa fa-credit-card">CVV</label>
+    <input type="text" name="cvv"class="form-control" placeholder="cvv"[(ngModel)]="payement.cvv" 
+    pattern="[0-9]{3}"
+    required #cvv="ngModel"
+        [class.is-invalid]="cvv.invalid&&cvv.touched"/>
+        <div *ngIf="cvv.errors &&(cvv.invalid && cvv.touched)">
+            <small class="text-danger" *ngIf="cvv.errors?.['required']">required field</small>
+            <small class="text-danger"*ngIf="cvv.errors?.['pattern']">please enter a 3 digit number</small>
+          </div>
+   
+   
+    </div>
+  </div>-->
+<!-- Submit button -->
+<!--<button [disabled]="payementform.form.invalid"type="submit" class="btn btn-primary btn-block mb-4"(click)="addToPayement(room.roomId,room,payement.checkIn,payement.checkOut)">
+ Pay
+</button>
+
+<div class="container">
+    <div class="container">
+        <div class="row col-md-6 col-md-offset-2 custyle">
+        <table class="table table-striped custab">
+        <thead>
+            <tr>
+                <th>orderId</th>
+                <th>cartId</th>
+                <th>totalPrice</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of orderList">
+                <td>{{order.orderId}}</td>
+                <td>{{order.cartId}}</td>
+                <td>{{order.totalPrice}}</td>-->
+                
+               <!--<td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteUser(user.userId)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td> -->
+              <!--</tr>
+        </tbody>
+        </table>
+        </div>
+    </div>-->
+  
+

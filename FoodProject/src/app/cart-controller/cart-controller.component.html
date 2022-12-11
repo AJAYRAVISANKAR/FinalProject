@@ -1,0 +1,78 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> 
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <fieldset>
+                    <legend class="text-center">Add your selected items to the Cart<span class="req"><small>
+                                required *</small></span></legend>
+                                <!--<div class="form-group">
+                                    <label for="cartId"><span class="req">* </span> cartId <small>This will be your Auto Generated
+                                            cartId</small> </label>
+                                    <input required type="number" [(ngModel)]="cart.cartId" name="cartId" id="cartId"
+                                        class="form-control phone"  placeholder="Auto Generated cartId..." />
+                                </div>-->
+
+                    <div class="form-group">
+                        <label for="quantity"><span class="req">* </span> quantity: <small>Here you will enter the quantity of food u want
+                                to order</small> </label>
+                        <input required type="number" [(ngModel)]="cart.quantity" name="quantity" id="quantity"
+                            class="form-control phone" maxlength="28" placeholder="Enter your desired quantity..." />
+                    </div>
+                    
+                   <!---- <div class="form-group">
+                        <label for="foodId"><span class="req">* </span> foodId: </label>
+                        <input class="form-control" type="number" [(ngModel)]="cart.foodId" name="foodId" id="foodId" required
+                            placeholder="foodId gets entered..." />
+                        <div id="errFirst"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailID"><span class="req">* </span> emailID : </label>
+                        <input class="form-control" type="emailID" [(ngModel)]="cart.emailID" name="emailID" id="emailID"
+                            placeholder="Enter your emailID" required />
+                        <div id="errLast"></div>
+                    </div>-->
+
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="Add" (click)="addCart()">
+                    </div>
+                </fieldset>
+            </form>
+            
+        </div>
+
+    </div>
+</div> 
+<!--<div class="container">
+    <div class="container">
+        <div class="row col-md-6 col-md-offset-2 custyle">
+        <table class="table table-striped custab">
+        <thead>
+            <tr>
+                <th>cartId</th>
+                <th>quantityId</th>
+                <th>foodId</th>
+                <th>emailID</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of cartList">
+                <td>{{cart.cartId}}</td>
+                <td>{{cart.quantity}}</td>
+                <td>{{cart.foodId}}</td>
+                <td>{{cart.emailID}}</td>-->
+                
+               <!--<td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteUser(user.userId)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td> -->
+              <!--</tr>
+        </tbody>
+        </table>
+        </div>
+    </div>-->
+    
+

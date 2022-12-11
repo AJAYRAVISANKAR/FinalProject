@@ -1,0 +1,43 @@
+<!--<nav class="navbar navbar-expand-sm navbar-da" style="background-color:black">
+    <div class="container-fluid">    
+       
+    <ul class = "nav navbar-nav"> -->
+        
+        
+        
+        <!--<button onclick="history.back()"class="btn btn-primary navbar-btn">Go Back</button>   -->   
+        
+    <!--</ul>
+    <button (click)="logOut()"class="btn btn-danger navbar-btn">Log out</button>
+    </div>
+</nav> -->
+<!--<h2 style="text-align:center">Cart Details</h2> -->
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+        <table class = "table table-striped">
+    <thead>
+        <tr>
+            <th>cartId</th>
+                <th>quantity</th>
+                <!--<th>foodId</th> -->
+                <!--<th>emailID</th>-->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cart of cartList">
+            <td>{{cart.cartId}}</td>
+            <td>{{cart.quantity}}</td>
+           <!-- <td>{{cart.foodId}}</td> -->
+           <!-- <td>{{cart.emailID}}</td> -->
+
+           <td class="text-center"><button class="btn btn-danger btn-xs" (click)="removeFromCart(cart.cartId)"><span class="glyphicon glyphicon-remove"></span> Remove</button></td>
+  </tr>
+    </tbody>
+</table>
+ 
+        </div></div></div> 
+
+
+

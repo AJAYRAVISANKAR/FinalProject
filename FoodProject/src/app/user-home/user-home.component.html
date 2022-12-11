@@ -1,0 +1,64 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> 
+
+<div class="container">
+    <div class="container">
+        <div class="row col-md-6 col-md-offset-2 custyle">
+            <h2 style="text-align: center;"class="fw-bold mb-5"><b style="color:rgb(0, 55, 205)" >Category</b></h2>
+        <table class="table table-striped custab">
+        <thead>
+            <tr>
+               <!-- <th>categoryId</th>!-->
+                <th>categoryName</th>
+                  
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let category of categoryList">
+               <!-- <td>{{category.categoryId}}</td>!-->
+                <td>{{category.categoryName}}</td>
+                 
+                <td><button type="button" class="btn btn-info"(click)="viewFood(category.categoryId)">ViewFood</button></td> 
+
+               
+              </tr>
+        </tbody>
+        </table>
+        </div>
+    </div>
+
+
+
+
+<!--  <nav class="navbar navbar-expand-sm navbar-da" style="background-color:black">
+    <div class="container-fluid">
+        <button (click)="back()"class="btn btn-primary navbar-btn"style="width:80;height: 35;">Go Back</button>   
+ 
+  <ul class = "nav navbar-nav">
+    
+     <button id="home"(click)="contactUs()"> <i class="fa fa-phone"></i>Contact Us</button>-->
+ 
+     <!--<button id="home"(click)="customerProfile()"> <i  class="bi bi-person"></i>Profile</button>-->
+     <!--<button id="home"(click)="cartDetails()"> <i  class="bi bi-person"></i>Add To Cart</button>
+ 
+ 
+  </ul>
+  <button (click)="logOut()"class="btn btn-danger navbar-btn">Log out</button>
+    </div>
+ </nav>
+ <h4 style="text-align: center;"><b style="color:red;">Explore </b>and find <b style="color:yellowgreen">Hotels</b> in <b style="color:dodgerblue">India</b>
+      <div class="row">
+       <div class="column">
+         <span *ngFor = "let Category of food" >
+         <div class="card">
+        
+             <img src="{{place.image}}" alt="Hotel" style="width:100%">-->
+             <!-- <p>{{place.placeName}}</p> -->
+             
+            <!--<p><button (click)="getCategoryList(category.categoryId)">{{category.categoryName}}</button></p>
+ 
+             
+         </div></span><br></div></div>
+         
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
